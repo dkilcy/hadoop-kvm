@@ -69,7 +69,7 @@ rm $HADOOP_VER2.tar.gz
 
 echo "Adding hadoop user and group..."
 useradd hadoop
-##passwd hadoop
+echo hadoop | passwd --stdin hadoop
 
 echo "Appending env vars to /home/hadoop/.bash_profile"
 echo "" >> /home/hadoop/.bash_profile
@@ -89,9 +89,9 @@ echo "" >> /home/hadoop/.bash_profile
 echo "##############################################################################" >> /home/hadoop/.bash_profile
 echo "" >> /home/hadoop/.bash_profile
 
-# ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
-# cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
-# ssh localhost
+su hadoop -c "ssh-keygen -t dsa -P '' -f /home/hadoop/.ssh/id_dsa"
+su hadoop -c "cat /home/hadoop/.ssh/id_dsa.pub > /home/hadoop/.ssh/authorized_keys"
+su hadoop -c "chmod 600 /home/hadoop/.ssh/authorized_keys"
 
 ##############################################################################
 
@@ -100,6 +100,9 @@ mkdir -p /data/hadoop
 mkdir -p /data/hadoop/mapred/system
 mkdir -p /data/hadoop/mapred/local  
 mkdir -p /data/hdfs
+mkdir -p /data/hdfs/name
+mkdir -p /data/hdfs/data
+mkdir -p /data/hdfs/namesecondary
 
 mkdir -p /var/opt/hadoop/pids
 mkdir -p /var/log/hadoop

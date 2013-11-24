@@ -25,10 +25,10 @@ echo "Start of program"
 
 cd /data/software
 
-echo "Installing lshw..."
+##wget http://pkgs.repoforge.org/lshw/lshw-2.15-1.el6.rf.x86_64.rpm
+##rpm -ivh lshw-2.15-1.el6.rf.x86_64.rpm 
 
-wget http://pkgs.repoforge.org/lshw/lshw-2.15-1.el6.rf.x86_64.rpm
-rpm -ivh lshw-2.15-1.el6.rf.x86_64.rpm 
+yum install gcalctool
 
 echo "End of program"
 #
