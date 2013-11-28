@@ -29,6 +29,7 @@ cd /data/software
 ##rpm -ivh lshw-2.15-1.el6.rf.x86_64.rpm 
 
 yum install gcalctool
+yum install gedit
 
 echo "End of program"
 #
