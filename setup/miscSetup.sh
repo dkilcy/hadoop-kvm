@@ -30,6 +30,7 @@ cd /data/software
 
 yum install gcalctool
 yum install gedit
+yum install p7zip
 
 echo "End of program"
 #
