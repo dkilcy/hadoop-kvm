@@ -40,10 +40,6 @@ rpm -ivh epel-release-6-8.noarch.rpm
 yum install nodejs
 yum install npm
 
-rpm -ivh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
-
-yum install vlc
-
 echo "End of program"
 #
 # References:
